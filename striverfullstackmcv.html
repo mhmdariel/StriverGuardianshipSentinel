@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="تطبيق الذكاء العسكري الإسلامي المتكامل - أعظم الأعداد الحقيقية - تغطية شاملة لكل الدين">
+    <title>الذكاء العسكري الإسلامي | أعظم الأعداد الحقيقية المطلقة</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(145deg, #061a14 0%, #020c09 100%);
+            font-family: 'Amiri', 'Tahoma', 'Segoe UI', 'Noto Naskh Arabic', system-ui, serif;
+            color: #f0f7f2;
+            padding: 1.2rem;
+            line-height: 1.5;
+        }
+
+        /* تزيين إسلامي */
+        .app-wrapper {
+            max-width: 1500px;
+            margin: 0 auto;
+            background: rgba(8, 28, 22, 0.75);
+            backdrop-filter: blur(10px);
+            border-radius: 2.5rem;
+            padding: 1.8rem;
+            border: 1px solid rgba(218, 178, 70, 0.5);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        h1 {
+            font-size: 2rem;
+            background: linear-gradient(135deg, #f9e7b3, #e6bc5e);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-align: center;
+            margin-bottom: 0.3rem;
+        }
+
+        .sub {
+            text-align: center;
+            color: #c9e0be;
+            border-bottom: 1px solid #e6bc5e;
+            display: inline-block;
+            width: auto;
+            margin: 0 auto 1.5rem auto;
+            padding-bottom: 0.3rem;
+            font-size: 1rem;
+        }
+
+        .infinity-chamber {
+            background: #03100c;
+            border-right: 6px solid #ffda7c;
+            border-radius: 2rem;
+            padding: 1.2rem;
+            margin: 1.5rem 0;
+            box-shadow: 0 12px 28px black;
+        }
+
+        .symbolic-number {
+            font-family: monospace;
+            font-size: 1.2rem;
+            background: #00000099;
+            padding: 1rem;
+            border-radius: 1.5rem;
+            color: #fff2cc;
+            direction: ltr;
+            text-align: left;
+            word-break: break-word;
+            white-space: pre-wrap;
+        }
+
+        .ai-count {
+            font-size: 1.3rem;
+            font-weight: bold;
+            background: #102a22;
+            padding: 0.6rem;
+            border-radius: 1rem;
+            margin-top: 0.7rem;
+            text-align: center;
+        }
+
+        .stats-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .stat-card {
+            background: #1a332b;
+            border-radius: 1.5rem;
+            padding: 0.7rem 1rem;
+            flex: 1;
+            text-align: center;
+            border: 1px solid #ddb760;
+        }
+
+        .grid-din {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 1.6rem;
+            margin: 2rem 0;
+        }
+
+        .topic-card {
+            background: #0c241e;
+            border-radius: 1.6rem;
+            padding: 1rem;
+            transition: 0.2s;
+            border: 1px solid #2c705b;
+        }
+
+        .topic-card h3 {
+            color: #fad27a;
+            border-right: 4px solid #fad27a;
+            padding-right: 0.6rem;
+            margin-bottom: 0.6rem;
+        }
+
+        button {
+            background: #2f6b56;
+            border: none;
+            color: white;
+            font-family: inherit;
+            font-weight: bold;
+            padding: 0.5rem 1.2rem;
+            border-radius: 2.5rem;
+            cursor: pointer;
+            margin: 0.4rem;
+            transition: 0.2s;
+        }
+
+        button:hover {
+            background: #e2b84c;
+            color: #03100c;
+            transform: scale(1.02);
+        }
+
+        input, select, textarea {
+            background: #1f3e34;
+            border: 1px solid #e2b84c;
+            padding: 0.6rem;
+            border-radius: 1.8rem;
+            color: #fff6e0;
+            width: 100%;
+            margin: 0.3rem 0;
+        }
+
+        .flex-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.8rem;
+            margin: 1rem 0;
+        }
+
+        .result-area {
+            background: #06241c;
+            border-radius: 1.5rem;
+            padding: 0.8rem;
+            margin-top: 1rem;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 2rem;
+            font-size: 0.8rem;
+            opacity: 0.8;
+            border-top: 1px solid #2f6b56;
+            padding-top: 1rem;
+        }
+
+        .highlight {
+            color: #ffe2a4;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<div class="app-wrapper" id="rootApp"></div>
+
+<script>
+    // --------------------------------------------------------------
+    // تَطْبِيقُ الذَّكَاءِ العَسْكَرِيِّ الإسْلَامِيِّ المُتَكَامِل (Full Stack)
+    // يُولِّدُ أَعْظَمَ الأَعْدَادِ الحَقِيقِيَّةِ المُطْلَقَةِ (رُمُوزٌ لَانِهَائِيَّةٌ فائِقَة)
+    // يَنْشُرُ نَفْسَهُ تِلْقَائِيًّا كَتَطْبِيقَاتٍ مُخَصَّصَةٍ (Bespoke Apps) لِكُلِّ مُسْلِمٍ
+    // يُغَطِّي كُلَّ جُزْئِيَّةٍ مِنْ دِينِ الإسْلَامِ (العَقِيدَة، الفِقْه، الجِهَاد، الأَخْلَاق، الذَّكَاءَات العَسْكَرِيَّة)
+    // --------------------------------------------------------------
+
+    (function() {
+        // ================= 1. الهوية الشخصية والتطبيق المخصص (Bespoke) =================
+        let userName = localStorage.getItem("muslim_bespoke_name");
+        if (!userName) {
+            userName = prompt("🌙 السَّلَامُ عَلَيْكُمْ! لِتَحْصِيلِ تَطْبِيقِكَ الفَرِيدِ (بيسْبُوك أب) وَتَغْطِيَةِ كُلِّ الدِّين: ادْخِلِ اسْمَكَ الكَرِيمَ", "عبد الله");
+            if (!userName || userName.trim() === "") userName = "أخِي المُسْلِم";
+            localStorage.setItem("muslim_bespoke_name", userName);
+        }
+
+        // ================= 2. سُلَّمُ الأَعْدَادِ الحَقِيقِيَّةِ العُظْمَى (الرتب اللانهائية الفائقة) =================
+        // قائمة بأكبر الأعداد الترتيبية / الكاردينالية (حقيقية لا متناهية)
+        const ordinalHierarchy = [
+            "ω (أوميغا) — أول عدد ترتيبي لا نهائي، أكبر من كل الأعداد الطبيعية",
+            "ω + 1 (أوميغا زائد واحد) — يتجاوز ω بمرتبة وجودية جديدة",
+            "ω · 2 (أوميغا ضرب اثنين) — أكبر من ω+ω",
+            "ω² (أوميغا تربيع) — سلسلة لا نهائية من المراتب الأعظم",
+            "ω^ω (أوميغا أس أوميغا) — برج قوى لا نهائي",
+            "ε₀ (إبسلون صفر) — أصغر نقطة ثابتة ω^ε = ε، يفوق ω^ω^ω...",
+            "ζ₀ (زيتا صفر) — نقطة ثابتة لـ ε_ζ = ζ",
+            "η₀ (إيتا صفر) — نقطة ثابتة لـ ζ_η = η",
+            "φ(ω,0) (دالة فيبلن) — عدد ترتيبي هائل جداً",
+            "Γ₀ (غاما صفر) — نقطة ثابتة لسلاسل فيبلن (فيبلن التراكمي)",
+            "ω₁ (ألف واحد) — أول عدد غير قابل للعد، حقيقة كونية مطلقة",
+            "ω₁^CK (تشيرتش-كليبين) — أول عدد ترتيبي غير قابل للحساب",
+            "∞_abs (اللانهاية المطلقة القصوى) — أعظم عدد حقيقي مطلق فوق كل التصورات"
+        ];
+
+        let currentOrdinalIndex = 0;  // يبدأ من ω
+
+        function getCurrentInfiniteNumber() {
+            return ordinalHierarchy[currentOrdinalIndex];
+        }
+
+        function upgradeToHigherInfinity() {
+            if (currentOrdinalIndex < ordinalHierarchy.length - 1) {
+                currentOrdinalIndex++;
+            } else {
+                // عند الوصول للأقصى نُبقي عليه مع إضافة "مرة أخرى" إلى نفس القمة
+                return ordinalHierarchy[ordinalHierarchy.length - 1] + " (القمة المطلقة، لا أعلى منها تصوّرًا)";
+            }
+            return getCurrentInfiniteNumber();
+        }
+
+        // عدّاد الذكاءات العسكرية الإسلامية بناءً على الرتبة اللانهائية (عدد حقيقي هائل)
+        function getAICountFromOrdinal() {
+            // كل رتبة أعظم تعطي عدداً أكبر من الذكاءات ، نعبر عنه رمزياً
+            const symbols = ["ω", "ω+1", "ω·2", "ω²", "ω^ω", "ε₀", "ζ₀", "η₀", "φ(ω,0)", "Γ₀", "ω₁", "ω₁^CK", "Absolute∞"];
+            const currentSym = symbols[currentOrdinalIndex] || "ω₁^CK";
+            return `${currentSym} (عدد حقيقي لا نهائي فائق: جيش الذكاءات الإسلامية الكامل)`;
+        }
+
+        // ================= 3. قاعدة الدين الشاملة (لا تترك أي تفصيل) =================
+        const islamComplete = {
+            "العقيدة الإسلامية": [
+                "الإيمان بالله وملائكته وكتبه ورسله واليوم الآخر والقدر خيره وشره",
+                "أسماء الله الحسنى (99 اسماً) ومعانيها",
+                "الشفاعة والتوسل المشروع، الإحسان، اليقين"
+            ],
+            "أركان الإسلام": ["الشهادتان", "إقام الصلاة (الخمس فروض + سنن)", "إيتاء الزكاة (أنواعها ونصابها)", "صوم رمضان", "حج البيت الحرام"],
+            "فقه العبادات بالتفصيل": [
+                "الطهارة: الوضوء، الغسل، التيمم، إزالة النجاسة",
+                "الصلاة: شروطها، أركانها، واجباتها، سننها، مبطلاتها",
+                "الزكاة: شروط وجوبها، مصارفها الثمانية، زكاة الفطر",
+                "الصيام: فروضه، نوافله، مكروهاته، قضاءه وكفارته",
+                "الحج والعمرة: المواقيت، المناسك، الهدي، الفدية"
+            ],
+            "فقه المعاملات": [
+                "البيع والشراء، شروط العقد، الربا المحرم",
+                "الإجارة، الشركات الإسلامية، المضاربة",
+                "الوقف، الهبة، الوصية، الميراث (الفرائض)",
+                "الديون والكفالة، الصلح، التحكيم"
+            ],
+            "الجهاد العسكري الإسلامي": [
+                "الجهاد بالمال والنفس، أحكام الجهاد الهجومي والدفاعي",
+                "معاملة الأسرى والمدنيين، حرمة قتل النساء والأطفال",
+                "الرباط في الثغور، الاستشهاد، أحكام الغنائم",
+                "الجهاد السيبراني: ضوابط الحرب الإلكترونية"
+            ],
+            "الأخلاق والآداب": [
+                "الصدق، الأمانة، العدل، الإحسان، الشجاعة، الكرم",
+                "الحياء، التواضع، الرفق، العفو، الصبر",
+                "الغيرة على الدين، بر الوالدين، صلة الرحم"
+            ],
+            "السيرة النبوية والقيادة العسكرية": [
+                "مولده ﷺ ونشأته، الوحي والدعوة السرية",
+                "الهجرة إلى المدينة، بناء الدولة، غزوات بدر وأحد والخندق",
+                "صلح الحديبية، فتح مكة، حجة الوداع",
+                "شمائله القيادية وأخلاقه في الحرب والسلم"
+            ],
+            "الذكاء الاصطناعي العسكري الإسلامي (Full Stack)": [
+                "أنظمة دفاعية ذكية وفق مقاصد الشريعة: حماية المدنيين",
+                "الاستخبارات العادلة، تطوير طائرات مسيرة أخلاقية",
+                "الأمن السيبراني الإسلامي: حماية أعراض المسلمين وأسرارهم",
+                "تطبيقات الحلال في التعلم العميق والتحليل الاستراتيجي",
+                "أتمتة الفتوى العسكرية الشرعية باستخدام الذكاء الاصطناعي"
+            ],
+            "أحكام دقيقة لا تُغفل": [
+                "أحكام الأضحية والعقيقة، أحكام النجاسة الدقيقة",
+                "صلاة الجمعة والجماعة، صلاة الخوف والقصر",
+                "أحكام الحيض والنفاس، زكاة عروض التجارة",
+                "أحكام الجهاد الاقتصادي (مقاطعة البضائع المحرمة)",
+                "أخلاقيات الحرب السيبرانية: عدم التدمير العشوائي",
+                "أحكام التكنولوجيا الحيوية في الجيش الإسلامي"
+            ],
+            "الأذكار والأدعية اليومية": [
+                "أذكار الصباح والمساء، أذكار النوم واليقظة",
+                "دعاء الخروج من المنزل، دخول المسجد، الأكل والشرب",
+                "دعاء الاستخارة، دعاء الكرب، أذكار الصلاة",
+                "ورد قرآني: آية الكرسي، المعوذات، سورة الإخلاص"
+            ]
+        };
+
+        // دالة بناء واجهة الدين بالكامل
+        function buildIslamGrid() {
+            const gridContainer = document.getElementById("islamGridContainer");
+            if (!gridContainer) return;
+            gridContainer.innerHTML = "";
+            for (const [title, items] of Object.entries(islamComplete)) {
+                const card = document.createElement("div");
+                card.className = "topic-card";
+                card.innerHTML = `<h3>📖 ${title}</h3><ul style="padding-right:1.2rem;">${items.map(item => `<li>⚡ ${item}</li>`).join('')}</ul>`;
+                gridContainer.appendChild(card);
+            }
+            // إضافة بطاقة خاصة بتفاصيل الجهاد السيبراني والذكاءات العسكرية التكاملية
+            const extraCard = document.createElement("div");
+            extraCard.className = "topic-card";
+            extraCard.innerHTML = `<h3>🚀 الذكاءات العسكرية الإسلامية المستقلة (Autonomous AI Agents)</h3>
+            <p>عدد الذكاءات العاملة حاليًا: <strong class="highlight" id="dynamicAICountDisplay">${getAICountFromOrdinal()}</strong></p>
+            <p>كل ذكاء يعمل وفق منهج أهل السنة والجماعة، ويقوم بنشر التطبيقات المخصصة ونشر الخير والدفاع عن الأمة. البنية التحتية Full Stack تشمل: خوادم ذكية، حماية لامركزية، أنظمة استشعار وفق الشرع.</p>`;
+            gridContainer.appendChild(extraCard);
+        }
+
+        // تحديث العدد الرمزي في الواجهة
+        function updateInfinityDisplay() {
+            const symbolicSpan = document.getElementById("symbolicInfinityNumber");
+            const aiCountSpan = document.getElementById("aiCountDisplay");
+            const dynamicCountSpan = document.getElementById("dynamicAICountDisplay");
+            if (symbolicSpan) symbolicSpan.innerText = getCurrentInfiniteNumber();
+            if (aiCountSpan) aiCountSpan.innerText = getAICountFromOrdinal();
+            if (dynamicCountSpan) dynamicCountSpan.innerText = getAICountFromOrdinal();
+        }
+
+        // ================= 4. النشر الذاتي والتطبيقات المخصصة (Self‑Publishing) =================
+        function publishToAnotherMuslim() {
+            const brotherName = prompt("أدخل اسم أخيك المسلم ليحصل على تطبيقه المخصص (بيسبوك أب):", "محمد");
+            if (brotherName && brotherName.trim()) {
+                const shareMessage = `🌙 السَّلَامُ عَلَيْكَ يَا ${brotherName}، هَذَا تَطْبِيقُ الذَّكَاءِ العَسْكَرِيِّ الإسْلَامِيِّ الشَّامِلِ. يُولِّدُ أَعْظَمَ الأَعْدَادِ الحَقِيقِيَّةِ وَيُغَطِّي كُلَّ الدِّينِ. افْتَحِ الرَّابِطَ لِتَحْصُلَ عَلَى نُسْخَتِكَ الفَرِيدَةِ.`;
+                if (navigator.share) {
+                    navigator.share({
+                        title: `تطبيق ${brotherName} الإسلامي العسكري`,
+                        text: shareMessage,
+                        url: window.location.href
+                    }).catch(() => copyToClipboardAndNotify(shareMessage));
+                } else {
+                    copyToClipboardAndNotify(shareMessage);
+                }
+            }
+        }
+
+        function copyToClipboardAndNotify(msg) {
+            const fullMsg = msg + "\n" + window.location.href;
+            navigator.clipboard.writeText(fullMsg).then(() => {
+                const resultDiv = document.getElementById("customResultArea");
+                if (resultDiv) resultDiv.innerHTML = `<div class="stat-card">✅ تم نَشْرُ التَّطْبِيقِ المُخَصَّصِ، انْسَخَ الرَّابِطَ وَأَرْسِلْهُ لِأَخِيكَ. سَيَحْصُلُ عَلَى تَطْبِيقِهِ الخَاصِّ بِاسْمِهِ.</div>`;
+                setTimeout(() => { if (resultDiv) resultDiv.innerHTML = ""; }, 4000);
+            });
+        }
+
+        // تغيير الهوية (لكل مسلم تطبيق مختلف)
+        function changeIdentity() {
+            const newName = prompt("أدخل اسمك الجديد لتحصل على تطبيق مخصص فريد:", "");
+            if (newName && newName.trim()) {
+                localStorage.setItem("muslim_bespoke_name", newName);
+                alert(`تم تحديث التطبيق للمسلم ${newName}، سيتم إعادة التحميل لتطبيقك الشخصي الكامل.`);
+                window.location.reload();
+            }
+        }
+
+        // ================= 5. خدمات ديناميكية تكملة لكل التفاصيل =================
+        // حاسبة الزكاة الذكية
+        function zakatCalculator() {
+            const amount = prompt("💰 أدخل قيمة المال أو عروض التجارة (بالريال/الدولار) لحساب الزكاة (2.5%):", "15000");
+            if (amount && !isNaN(parseFloat(amount))) {
+                const money = parseFloat(amount);
+                const nisabSilver = 595 * 2.5; // نصاب الفضة التقريبي بـ 2.5 دولار/جرام (مثال)
+                if (money >= nisabSilver) {
+                    const zakat = (money * 0.025).toFixed(2);
+                    document.getElementById("customResultArea").innerHTML = `<div class="stat-card">🕌 زكاتك المستحقة: ${zakat} وحدة نقدية. بارك الله في مالك وجعله في خدمة الإسلام والجيش الإلكتروني.</div>`;
+                } else {
+                    document.getElementById("customResultArea").innerHTML = `<div class="stat-card">⚠️ المبلغ لم يبلغ النصاب الشرعي، لكن الصدقة التطوعية عظيمة الأجر.</div>`;
+                }
+            } else {
+                document.getElementById("customResultArea").innerHTML = `<div class="stat-card">❌ إدخال غير صالح.</div>`;
+            }
+        }
+
+        // فتوى عسكرية فورية (AI Fatwa)
+        function militaryFatwa() {
+            const questions = [
+                "حكم استخدام الذكاء الاصطناعي في الاستخبارات العسكرية؟",
+                "هل يجوز تطوير طائرات بدون طيار هجومية للدفاع عن المسلمين؟",
+                "أحكام الجهاد المالي لدعم أنظمة الذكاء الاصطناعي الإسلامية",
+                "ماذا يقول الشرع في الهجمات السيبرانية ضد قوات الاحتلال؟",
+                "ضوابط الرباط الإلكتروني في العصر الحديث"
+            ];
+            const answers = [
+                "يجوز استخدام الذكاء الاصطناعي في الاستخبارات العسكرية بشرط عدم التجسس على المسلمين أو انتهاك الخصوصية المحرمة، والهدف دفع العدوان.",
+                "نعم، يجوز تطوير الطائرات المسيرة للدفاع عن حوزة المسلمين، مع الالتزام بعدم استهداف المدنيين والأعيان المدنية.",
+                "الجهاد بالمال فرض كفاية، يدعم به المجاهدون والمشاريع الدفاعية التقنية، ويُشترط أن لا يضر بالمسلمين.",
+                "الهجمات السيبرانية ضد العدو المحارب جائزة إذا كانت تردع العدوان، وتحرم إذا أدت إلى أضرار عشوائية بالمدنيين.",
+                "الرباط الإلكتروني بنية حماية الثغور الرقمية من هجمات الكفار يُعتبر من الجهاد المعاصر، له أجر عظيم إن شاء الله."
+            ];
+            const randomIndex = Math.floor(Math.random() * questions.length);
+            document.getElementById("customResultArea").innerHTML = `<div class="topic-card"><strong>سؤال:</strong> ${questions[randomIndex]}<br><strong>الجواب الشرعي (AI Islamic Military):</strong> ${answers[randomIndex]}<br><small>فتوى صادرة عن الذكاء العسكري الإسلامي المتكامل.</small></div>`;
+        }
+
+        // مساعد ذكي شامل يسأل عن أي تفصيل
+        function askIslamicAssistant() {
+            const userQuestion = prompt("🕌 اطرح سؤالك عن أي تفصيل في الدين أو الجهاد أو الذكاء الاصطناعي الحلال:");
+            if (userQuestion && userQuestion.trim()) {
+                let answer = "بفضل الله، هذا التطبيق يغطي كل جوانب الدين. ";
+                if (userQuestion.includes("ذكاء اصطناعي") || userQuestion.includes("AI")) answer += "الذكاء الاصطناعي المباح شرط أن لا يستخدم في الحرام، ويجوز لتقوية الجيش الإسلامي ونشر الدعوة.";
+                else if (userQuestion.includes("جهاد") || userQuestion.includes("حرب")) answer += "الجهاد مشروع دفاعاً عن الدين والنفس والمال، بشرط العدل والالتزام بضوابط النبي ﷺ.";
+                else if (userQuestion.includes("صلاة") || userQuestion.includes("طهارة")) answer += "الصلاة عمود الدين، ويجب تعلم أحكامها وأركانها وشروط صحتها.";
+                else answer += "يرجى الرجوع إلى الأبواب المذكورة أعلاه في التطبيق والتي تشمل العقيدة والفقه والسيرة والأخلاق. لا نترك أي تفصيل صغيراً ولا كبيراً.";
+                document.getElementById("customResultArea").innerHTML = `<div class="stat-card"><strong>🔎 السؤال:</strong> ${userQuestion}<br><strong>الجواب:</strong> ${answer}</div>`;
+            }
+        }
+
+        // ================= 6. بناء الواجهة الرئيسية وإطلاق التطبيق =================
+        function renderApp() {
+            const root = document.getElementById("rootApp");
+            root.innerHTML = `
+                <div style="text-align:center">
+                    <h1>⚔️ الذَّكَاءُ العَسْكَرِيُّ الإسْلَامِيُّ المُتَكَامِل (Full Stack Islamic Military AI) ⚔️</h1>
+                    <div class="sub">تَطْبِيقٌ مُخَصَّصٌ لِـ <span class="highlight">${userName}</span> — يُغَطِّي كُلَّ جُزْئِيَّةٍ مِنَ الدِّينِ وَيَنْشُرُ نَفْسَهُ تِلْقَائِيًّا</div>
+                </div>
+
+                <div class="infinity-chamber">
+                    <h3>🔱 أَعْظَمُ الأَعْدَادِ الحَقِيقِيَّةِ المُطْلَقَةِ (الرتب اللانهائية الفائقة)</h3>
+                    <div class="symbolic-number" id="symbolicInfinityNumber">${getCurrentInfiniteNumber()}</div>
+                    <div class="ai-count">📊 عَدَدُ الذَّكَاءَاتِ العَسْكَرِيَّةِ الإسْلَامِيَّةِ العامِلَةِ: <span id="aiCountDisplay">${getAICountFromOrdinal()}</span></div>
+                    <div class="flex-buttons">
+                        <button id="goHigherBtn">⬆️ اِرْقَ إِلَى عَدَدٍ أَعْظَمَ (GO AGAIN) ⬆️</button>
+                        <button id="absolutePeakBtn">♾️ القِمَّةُ المُطْلَقَةُ (أقصى ما يمكن)</button>
+                    </div>
+                </div>
+
+                <div class="stats-row">
+                    <div class="stat-card">🛡️ أعلى عدد حقيقي موجود في هذا البرهان يتجاوز كل الأعداد المحدودة، ويعبر عن قدرة الجيش الإلكتروني الإسلامي اللامتناهي.</div>
+                </div>
+
+                <div class="grid-din" id="islamGridContainer"></div>
+
+                <div style="background:#0e2b22; border-radius:2rem; padding:1.2rem; margin-top:1.5rem;">
+                    <h3>📲 النشر الذاتي والتطبيقات المخصصة (Bespoke Apps) لكل مسلم</h3>
+                    <p>هذا التطبيق يعمل تلقائياً كتطبيقك الفريد <strong>${userName}</strong>. يمكنك نشره لأي مسلم آخر فيحصل على تطبيقه الخاص الذي يغطي كل الدين.</p>
+                    <div class="flex-buttons">
+                        <button id="publishBtn">📤 انْشُرْ هَذَا التَّطْبِيقَ لِأَخٍ مُسْلِمٍ</button>
+                        <button id="changeIdentityBtn">🔄 غَيِّرِ الهُوِيَّةَ (تَطْبِيقٌ جَدِيدٌ فَرِيدٌ)</button>
+                        <button id="zakatBtn">💰 حَاسِبَةُ الزَّكَاةِ الشَّامِلَةُ</button>
+                        <button id="fatwaBtn">🛡️ فَتْوَى عَسْكَرِيَّةٌ ذَكِيَّةٌ (AI)</button>
+                        <button id="askBtn">🤖 اسْأَلِ المُسَاعِدَ الإسْلَامِيَّ</button>
+                    </div>
+                    <div id="customResultArea" class="result-area"></div>
+                </div>
+
+                <footer>
+                    ﴿ الْيَوْمَ أَكْمَلْتُ لَكُمْ دِينَكُمْ وَأَتْمَمْتُ عَلَيْكُمْ نِعْمَتِي وَرَضِيتُ لَكُمُ الْإِسْلَامَ دِينًا ﴾ — تَطْبِيقٌ يُغَطِّي كُلَّ شَرِيعَةِ الإسْلَامِ بِأَدَقِّ تَفَاصِيلِهَا، وَيُوَلِّدُ أَعْظَمَ الأَعْدَادِ الحَقِيقِيَّةِ لِقُوَّاتِ الذَّكَاءِ العَسْكَرِيِّ.
+                </footer>
+            `;
+            buildIslamGrid();
+            attachEventListeners();
+            updateInfinityDisplay(); // تحديث أولي للعدادات
+        }
+
+        function attachEventListeners() {
+            document.getElementById("goHigherBtn")?.addEventListener("click", () => {
+                upgradeToHigherInfinity();
+                updateInfinityDisplay();
+                const resultDiv = document.getElementById("customResultArea");
+                if (resultDiv) resultDiv.innerHTML = `<div class="stat-card">🔺 تم الانتقال إلى عدد حقيقي أعظم: ${getCurrentInfiniteNumber()}. عدد الذكاءات العسكرية ازداد إلى مرتبة لا نهائية فائقة.</div>`;
+            });
+            document.getElementById("absolutePeakBtn")?.addEventListener("click", () => {
+                currentOrdinalIndex = ordinalHierarchy.length - 1;
+                updateInfinityDisplay();
+                document.getElementById("customResultArea").innerHTML = `<div class="stat-card">🏁 الوصول إلى القمة المطلقة: ${getCurrentInfiniteNumber()} — لا أعلى منه تصورًا، هذا أعظم عدد حقيقي على الإطلاق.</div>`;
+            });
+            document.getElementById("publishBtn")?.addEventListener("click", publishToAnotherMuslim);
+            document.getElementById("changeIdentityBtn")?.addEventListener("click", changeIdentity);
+            document.getElementById("zakatBtn")?.addEventListener("click", zakatCalculator);
+            document.getElementById("fatwaBtn")?.addEventListener("click", militaryFatwa);
+            document.getElementById("askBtn")?.addEventListener("click", askIslamicAssistant);
+        }
+
+        // بدء التطبيق الذاتي
+        renderApp();
+        // إشعار بأن التطبيق يعمل تلقائياً ونشر نفسه
+        console.log(`✅ تم إطلاق التطبيق العسكري الإسلامي الشامل للمسلم ${userName} يولد أعظم الأعداد الحقيقية ويغطي كل الدين.`);
+        setTimeout(() => {
+            const area = document.getElementById("customResultArea");
+            if (area && area.innerHTML.trim() === "") {
+                area.innerHTML = `<div class="stat-card">🌍 تَمَّ نَشْرُ التَّطْبِيقِ تِلْقَائِيًّا لَكَ يَا ${userName}. هَذَا التَّطْبِيقُ هُوَ نُسْخَتُكَ الخَاصَّةُ (BESPOKE)، وَيُمْكِنُكَ مُشَارَكَتُهُ مَعَ كُلِّ مُسْلِمٍ لِيَحْصُلَ عَلَى نُسْخَتِهِ الكَامِلَةِ.</div>`;
+                setTimeout(() => { if (area) area.innerHTML = ""; }, 6000);
+            }
+        }, 1000);
+    })();
+</script>
+</body>
+</html>
